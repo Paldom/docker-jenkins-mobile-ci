@@ -7,7 +7,7 @@
   <mode>NORMAL</mode>
   <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
   <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.29.4">
-    <host>10.10.10.173</host>
+    <host>your.mac.host.or.ip</host>
     <port>22</port>
     <credentialsId>05e911a9-9d00-4c90-a23e-11847791e42f</credentialsId>
     <launchTimeoutSeconds>210</launchTimeoutSeconds>
@@ -25,13 +25,31 @@
           <default>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </default>
-          <int>3</int>
+          <int>12</int>
+          <string>APPLE_ID</string>
+          <string>YOUR_APPLE_ID</string>
+          <string>ITC_TEAM_ID</string>
+          <string>YOUR_ITC_TEAM_ID</string>
+          <string>KEYSTORE_ALIAS</string>
+          <string>YOUR_KEYSTORE_ALIAS</string>
+          <string>KEYSTORE_ALIAS_PASSWORD</string>
+          <string>YOUR_KEYSTORE_ALIAS_PASSWORD</string>
+          <string>KEYSTORE_PASSWORD</string>
+          <string>YOUR_KEYSTORE_PASSWORD</string>
+          <string>LANG</string>
+          <string>en_US.UTF-8</string>
+          <string>LC_ALL</string>
+          <string>en_US.UTF-8</string>
+          <string>MATCH_PASSWORD</string>
+          <string>YOUR_MATCH_PASSWORD</string>
           <string>PATH</string>
           <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
           <string>PATH+PYTHON</string>
           <string>/usr/local/opt/python/libexec/bin</string>
           <string>PATH+RUBY</string>
-          <string>/Users/dpal/.gem/ruby/2.3.0/bin</string>
+          <string>/usr/local/opt/ruby/bin</string>
+          <string>TEAM_ID</string>
+          <string>YOUR_TEAM_ID</string>
         </tree-map>
       </envVars>
     </hudson.slaves.EnvironmentVariablesNodeProperty>
