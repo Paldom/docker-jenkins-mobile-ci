@@ -6,15 +6,12 @@
   <numExecutors>1</numExecutors>
   <mode>NORMAL</mode>
   <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
-  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.29.4">
-    <host>your.mac.host.or.ip</host>
-    <port>22</port>
-    <credentialsId>05e911a9-9d00-4c90-a23e-11847791e42f</credentialsId>
-    <launchTimeoutSeconds>210</launchTimeoutSeconds>
-    <maxNumRetries>10</maxNumRetries>
-    <retryWaitTime>15</retryWaitTime>
-    <sshHostKeyVerificationStrategy class="hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy"/>
-    <tcpNoDelay>true</tcpNoDelay>
+  <launcher class="hudson.slaves.JNLPLauncher">
+    <workDirSettings>
+      <disabled>false</disabled>
+      <internalDir>remoting</internalDir>
+      <failIfWorkDirIsMissing>false</failIfWorkDirIsMissing>
+    </workDirSettings>
   </launcher>
   <label>mac</label>
   <nodeProperties>
@@ -25,7 +22,13 @@
           <default>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </default>
-          <int>12</int>
+          <int>18</int>
+          <string>APP_STORE_API_ISSUER_ID</string>
+          <string>YOUR_APP_STORE_API_ISSUER_ID</string>
+          <string>APP_STORE_API_KEY_CONTENT</string>
+          <string>YOUR_APP_STORE_API_KEY_CONTENT</string>
+          <string>APP_STORE_API_KEY_ID</string>
+          <string>YOUR_APP_STORE_API_KEY_ID</string>
           <string>APPLE_ID</string>
           <string>YOUR_APPLE_ID</string>
           <string>ITC_TEAM_ID</string>
@@ -44,10 +47,16 @@
           <string>YOUR_MATCH_PASSWORD</string>
           <string>PATH</string>
           <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+          <string>PATH+ANDROID</string>
+          <string>~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools</string>
+          <string>PATH+NODE</string>
+          <string>~/.nvm/versions/node/v16.1.0/bin</string>
           <string>PATH+PYTHON</string>
           <string>/usr/local/opt/python/libexec/bin</string>
           <string>PATH+RUBY</string>
-          <string>/usr/local/opt/ruby/bin</string>
+          <string>~/.rbenv/shims:/usr/local/opt/openssl@1.1/bin</string>
+          <string>SONAR_TOKEN</string>
+          <string>YOUR_SONAR_TOKEN</string>
           <string>TEAM_ID</string>
           <string>YOUR_TEAM_ID</string>
         </tree-map>
